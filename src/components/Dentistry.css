@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+  }
+  
+  header {
+    background-color: #9f83a1;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+ 
+  main {
+    padding: 20px;
+  }
+  
+ 
+  
+  h1, h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+  
+  .dentist {
+    display: block;
+    align-items: first baseline;
+    margin-bottom: 20px;
+  }
+  
+  .dentist img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius:0%;
+    margin-right: 20px;
+  }
+  
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .book-appointment-button {
+    display: inline-block;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.book-appointment-button:hover {
+    background-color: #45a049;
+}
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  .logo img {
+    height: 65px;
+  /*   width: 60px; */
+  width: 60px;
+  }
