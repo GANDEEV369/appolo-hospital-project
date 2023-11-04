@@ -1,0 +1,27 @@
+*{
+    padding:0px;
+    margin:0px;
+    box-sizing: border-box;
+}
+.logo{
+    height:120px;
+    width:100%;
+    background-color:bisque;
+}
+h1 {
+    text-align: center;
+  }
+body{
+    height:100vh;
+    width:100vw;
+  }
+  .first-side{
+    background-color: rgba(137, 47, 102, 0.135);
+    border:2px solid black;
+    border-radius:10px;
+  }
+  .second-side{
+    background-color: rgb(90, 221, 215);
+    border:2px solid black;
+    border-radius:10px;
+  }

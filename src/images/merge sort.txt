@@ -1,0 +1,66 @@
+arr = []
+def triple(arr, n):
+    ans = 0
+    for i in range(0,32):
+        set = 0
+        for j in range(0,n):
+            if checkbit(arr[j],i) == True:
+                  set += 1
+        if set%3== 1 :
+            ans = ans|(1<<i)
+    print(ans)
+def checkbit(a,l):
+    k = a >>l
+    if k&1 == 1:
+        return True
+    return False
+for t in range(0,int(input())):
+    n = int(input())
+    arr = list(map(int,input().split()))
+        
+    triple(arr,n)
+
+
+
+
+
+
+
+
+def mergeSort(array):
+    if len(array) > 1:
+        r = len(array)//2
+        L = array[:r]
+        M = array[r:]
+        mergeSort(L)
+        mergeSort(M)
+        i = j = k = 0
+        while i < len(L) and j < len(M):
+            if L[i] < M[j]:
+                array[k] = L[i]
+                i += 1
+            else:
+                array[k] = M[j]
+                j += 1
+            k += 1
+        while i < len(L):
+            array[k] = L[i]
+            i += 1
+            k += 1
+
+        while j < len(M):
+            array[k] = M[j]
+            j += 1
+            k += 1
+
+
+# Print the array
+def printList(array):
+    for i in range(len(array)):
+        print(array[i], end=" ")
+    print()
+
+if _name_ == '_main_':
+    array = [6, 5, 12, 10, 9, 1]
+
+    mergeSort(array)

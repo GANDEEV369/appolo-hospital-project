@@ -1,0 +1,92 @@
+.navbar {
+  background-color: #333333a8;
+}
+
+.navbar .navbar-nav {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar .nav-item {
+  margin: 10px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+/* Slideshow Styles */
+.slideshow {
+  position: relative;
+  max-width: 100%;
+  height: 550px;
+}
+
+.slideshow img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.medicine-section,
+.babycare-section {
+  margin-bottom: 20px;
+}
+
+.medicine-section h2,
+.babycare-section h2 {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.medicine-box,
+.babycare-box {
+  background-color: #a6f1f2c8;
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.medicine-box img,
+.babycare-box img {
+  width: 100%;
+  max-height: 200px;
+  margin-bottom: 10px;
+}
+
+.footer {
+  background-color: #94b9f3;
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* Custom Styling */
+.navbar-nav .nav-link {
+  color: green;
+  font-size: 18px;
+}
+
+@media (max-width: 576px) {
+  .navbar-nav .nav-link {
+    font-size: 16px;
+  }
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+#about img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
