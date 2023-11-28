@@ -1,6 +1,7 @@
 import React from 'react';
 import preview from '../images/apollo-removebg-preview.png'
 import Header from './Header';
+import {Link} from 'react-router-dom';
 class PlasticSurgeryPage extends React.Component {
   render() {
     const bodyStyle = {
@@ -26,7 +27,14 @@ class PlasticSurgeryPage extends React.Component {
     const sectionStyle = {
       marginBottom: '20px',
     };
-
+    const bookAppointmentStyle = {
+      marginTop: '10px',
+      backgroundColor: 'blue',
+      color: 'white',
+      padding: '8px 12px',
+      borderRadius: '5px',
+      textDecoration: 'none',
+    };
     const headingStyle = {
       color: '#333',
       marginBottom: '10px',
@@ -81,7 +89,7 @@ class PlasticSurgeryPage extends React.Component {
         <Header/>
         <header style={headerStyle}>
           <div className="logo" style={logoStyle}>
-            <a href="Home-Page.html">
+          <Link to="/">
               <img
                 className="ml-2 mt-2"
                 height="65px"
@@ -90,7 +98,7 @@ class PlasticSurgeryPage extends React.Component {
                 alt="img not found"
                 style={logoImgStyle}
               />
-            </a>
+            </Link>
           </div>
           <h1>Plastic Surgery Department</h1>
         </header>
@@ -173,9 +181,9 @@ class PlasticSurgeryPage extends React.Component {
               <h3>Dr. Emily Johnson</h3>
               <p>Specializes in facial procedures</p>
               <p>Experience: 15+ years</p>
-              <a href="bookapointment.html" className="book-appointment-button" style={bookAppointmentButtonStyle}>
+              <Link to="/book-appointment" style={bookAppointmentStyle}>
                 Book Appointment
-              </a>
+              </Link>
             </div>
             <div className="surgeon" style={surgeonStyle}>
               <img
@@ -188,9 +196,9 @@ class PlasticSurgeryPage extends React.Component {
               <h3>Dr. Sarah Thompson</h3>
               <p>Specializes in body contouring</p>
               <p>Experience: 10+ years</p>
-              <a href="bookapointment.html" className="book-appointment-button" style={bookAppointmentButtonStyle}>
+              <Link to="/book-appointment" style={bookAppointmentStyle}>
                 Book Appointment
-              </a>
+              </Link>
             </div>
           </section>
 

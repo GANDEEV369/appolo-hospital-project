@@ -3,6 +3,7 @@ import preview from '../images/apollo-removebg-preview.png'
 import cardiology from './images/cardiology.jpg';
 import c1 from './images/c1.png'
 import Header from './Header';
+import {Link} from 'react-router-dom';
 const CardiologyDepartment = () => {
   const headerStyle = {
     backgroundColor: 'lightskyblue',
@@ -77,7 +78,7 @@ const CardiologyDepartment = () => {
       <Header />
       <header style={headerStyle}>
         <div className="logo" style={logoStyle}>
-          <a href="Home-Page.html">
+        <Link to="/">
             <img
               className="ml-2 mt-2"
               height="65px"
@@ -85,7 +86,7 @@ const CardiologyDepartment = () => {
               src={preview}
               alt="img not found"
             />
-          </a>
+          </Link>
         </div>
         <h1>Cardiology Department</h1>
       </header>
@@ -123,9 +124,9 @@ const CardiologyDepartment = () => {
               <h3>Dr A K Bardhan</h3>
               <p>Dr A K Bardhan is a board-certified cardiologist with over 30 years of experience. He specializes in cardiovascular diagnostics and treatment.</p>
               <div className="book-appointment-box" style={bookAppointmentBoxStyle}>
-                <a href="bookapointment.html" className="book-appointment" style={bookAppointmentStyle}>
+                <Link to="/book-appointment" style={bookAppointmentStyle}>
                   Book Appointment
-                </a>
+                </Link>
               </div>
             </div>
           </div>

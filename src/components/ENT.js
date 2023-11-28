@@ -202,7 +202,7 @@
 import React from "react";
 import preview from "../images/apollo-removebg-preview.png";
 import Header from "./Header";
-
+import {Link} from 'react-router-dom';
 class ENTDepartment extends React.Component {
   render() {
     const bodyStyle = {
@@ -252,6 +252,14 @@ class ENTDepartment extends React.Component {
       objectFit: "cover",
       borderRadius: "100%",
     };
+    const bookAppointmentStyle = {
+      marginTop: '10px',
+      backgroundColor: 'blue',
+      color: 'white',
+      padding: '8px 12px',
+      borderRadius: '5px',
+      textDecoration: 'none',
+    };
 
     const bookAppointmentButtonStyle = {
       display: "inline-block",
@@ -299,7 +307,7 @@ class ENTDepartment extends React.Component {
         </header> */}
         <header style={headerStyle}>
           <div className="logo" style={logoStyle}>
-            <a href="Home-Page.html">
+          <Link to="/">
               <img
                 className="ml-2 mt-2"
                 height="65px"
@@ -308,7 +316,7 @@ class ENTDepartment extends React.Component {
                 alt="img not found"
                 style={logoImageStyle}
               />
-            </a>
+            </Link>
           </div>
           <h1>ENT (Ear, Nose & Throat) Department</h1>
         </header>
@@ -354,13 +362,9 @@ class ENTDepartment extends React.Component {
             <h3>Dr. Biswaranjan Panda</h3>
             <p>Specializes in ear disorders</p>
             <p>Experience: 15+ years</p>
-            <a
-              href="bookapointment.html"
-              className="book-appointment-button"
-              style={bookAppointmentButtonStyle}
-            >
+            <Link to="/book-appointment" style={bookAppointmentStyle}>
               Book Appointment
-            </a>
+            </Link>
           </div>
           <div className="doctor" style={doctorStyle}>
             <img
@@ -373,13 +377,9 @@ class ENTDepartment extends React.Component {
             <h3>Dr. Sarah Thompson</h3>
             <p>Specializes in nasal and sinus treatments</p>
             <p>Experience: 11+ years</p>
-            <a
-              href="bookapointment.html"
-              className="book-appointment-button"
-              style={bookAppointmentButtonStyle}
-            >
+            <Link to="/book-appointment" style={bookAppointmentStyle}>
               Book Appointment
-            </a>
+            </Link>
           </div>
         </section>
 

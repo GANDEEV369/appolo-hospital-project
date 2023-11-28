@@ -1,13 +1,20 @@
 import React from 'react';
 import preview from '../images/apollo-removebg-preview.png'
-
+import {Link} from 'react-router-dom';
 const GynecologyDepartment = () => {
   const globalStyles = {
     margin: 0,
     padding: 0,
     boxSizing: 'border-box',
   };
-
+  const bookAppointmentStyle = {
+    marginTop: '10px',
+    backgroundColor: 'blue',
+    color: 'white',
+    padding: '8px 12px',
+    borderRadius: '5px',
+    textDecoration: 'none',
+  };
   const bodyStyle = {
     fontFamily: 'Arial, sans-serif',
     lineHeight: 1.5,
@@ -99,7 +106,7 @@ const GynecologyDepartment = () => {
     <div style={globalStyles}>
       <header style={headerStyle}>
         <div className="logo" style={logoStyle}>
-          <a href="Home-Page.html">
+        <Link to="/">
             <img
               className="ml-2 mt-2"
               height="65px"
@@ -108,7 +115,7 @@ const GynecologyDepartment = () => {
               alt="img not found"
               style={logoImgStyle}
             />
-          </a>
+          </Link>
         </div>
         <h1>Gynecology Department</h1>
       </header>
@@ -183,9 +190,9 @@ const GynecologyDepartment = () => {
             <h3>Dr. Emily Johnson</h3>
             <p>Specializes in obstetrics and gynecology</p>
             <p>Experience: 15+ years</p>
-            <a href="bookapointment.html" className="book-appointment-button" style={bookAppointmentButtonStyle}>
+            <Link to="/book-appointment" style={bookAppointmentStyle}>
               Book Appointment
-            </a>
+            </Link>
           </div>
 
           <div className="doctor" style={doctorStyle}>
@@ -199,9 +206,9 @@ const GynecologyDepartment = () => {
             <h3>Dr. Sarah Thompson</h3>
             <p>Specializes in reproductive endocrinology</p>
             <p>Experience: 10+ years</p>
-            <a href="bookapointment.html" className="book-appointment-button" style={bookAppointmentButtonStyle}>
+            <Link to="/book-appointment" style={bookAppointmentStyle}>
               Book Appointment
-            </a>
+            </Link>
           </div>
 
           <div className="doctor" style={doctorStyle}>
@@ -215,9 +222,9 @@ const GynecologyDepartment = () => {
             <h3>Dr. Sonakshi Vindre</h3>
             <p>Specializes in reproductive endocrinology</p>
             <p>Experience: 20+ years</p>
-            <a href="bookapointment.html" className="book-appointment-button" style={bookAppointmentButtonStyle}>
+            <Link to="/book-appointment" style={bookAppointmentStyle}>
               Book Appointment
-            </a>
+            </Link>
           </div>
         </section>
       </main>
