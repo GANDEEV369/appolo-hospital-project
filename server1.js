@@ -32,7 +32,9 @@ const talentsprint = mongodb.MongoClient;
 const app = express();
 const cors = require('cors');
 
-app.use(cors());
+app.use(cors({
+  origin:["http://localhost:3005","https://apollo-hospital-app.onrender.com"]
+}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
