@@ -230,7 +230,7 @@
 import React from 'react';
 import preview from '../images/apollo-removebg-preview.png';
 import Header from './Header';
-
+import {Link} from 'react-router-dom';
 class DentistDepartment extends React.Component {
   render() {
     const bodyStyle = {
@@ -328,7 +328,7 @@ class DentistDepartment extends React.Component {
         <Header/>
         <header style={headerStyle}>
           <div className="logo" style={logoStyle}>
-            <a href="Home-Page.html">
+          <Link to="/">
               <img
                 className="ml-2 mt-2"
                 height="65px"
@@ -337,7 +337,7 @@ class DentistDepartment extends React.Component {
                 alt="Image not found"
                 style={logoImageStyle}
               />
-            </a>
+            </Link>
           </div>
           <h1 style={h1Style}>Dentist Department</h1>
         </header>
@@ -417,9 +417,9 @@ class DentistDepartment extends React.Component {
                 <h3>Dr. Emily Johnson</h3>
                 <p>Specializes in cosmetic dentistry</p>
                 <p>Experience: 10+ years</p>
-                <a href="bookappointment.html" className="book-appointment-button" style={bookAppointmentStyle}>
+                <Link to="/book-appointment" style={bookAppointmentStyle}>
                   Book Appointment
-                </a>
+                </Link>
               </div>
             </div>
             <div className="dentist" style={doctorSectionStyle}>
@@ -434,9 +434,9 @@ class DentistDepartment extends React.Component {
                 <h3>Dr. Sarah Thompson</h3>
                 <p>Specializes in pediatric dentistry</p>
                 <p>Experience: 15+ years</p>
-                <a href="bookappointment.html" className="book-appointment-button" style={bookAppointmentStyle}>
+                <Link to="/book-appointment" style={bookAppointmentStyle}>
                   Book Appointment
-                </a>
+                </Link>
               </div>
             </div>
           </section>

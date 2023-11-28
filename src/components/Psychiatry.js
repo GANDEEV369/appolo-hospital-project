@@ -117,7 +117,7 @@
 import React from 'react';
 import preview from '../images/apollo-removebg-preview.png';
 import Header from './Header';
-
+import {Link} from 'react-router-dom';
 class PsychiatryPage extends React.Component {
   render() {
     const bodyStyle = {
@@ -166,7 +166,7 @@ class PsychiatryPage extends React.Component {
         <Header/>
         <header style={headerStyle}>
           <div className="logo" style={logoStyle}>
-            <a href="Home-Page.html">
+          <Link to="/">
               <img
                 className="ml-2 mt-2"
                 height="65px"
@@ -175,7 +175,7 @@ class PsychiatryPage extends React.Component {
                 alt="Image not found"
                 style={logoImgStyle}
               />
-            </a>
+            </Link>
           </div>
           <h1>Psychiatry</h1>
         </header>

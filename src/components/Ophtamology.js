@@ -6,12 +6,15 @@ import o2 from'./images/o2.png';
 import o3 from'./images/o3.png';
 import o4 from'./images/o4.png';
 import Header from './Header';
+import {Link} from 'react-router-dom';
+ 
 const OphthalmologyDepartment = () => {
   const bodyStyle = {
     fontFamily: 'Arial, sans-serif',
     margin: 0,
     padding: 0,
   };
+  
 
   const headerStyle = {
     backgroundColor: 'lightskyblue',
@@ -103,7 +106,7 @@ const OphthalmologyDepartment = () => {
       <Header/>
       <header style={headerStyle}>
         <div className="logo" style={logoStyle}>
-          <a href="Home-Page.html">
+        <Link to="/">
             <img
               className="ml-2 mt-2"
               height="65px"
@@ -112,7 +115,7 @@ const OphthalmologyDepartment = () => {
               alt="img not found"
               style={logoImgStyle}
             />
-          </a>
+          </Link>
         </div>
         <h1 style={h1Style}>Ophthalmology Department</h1>
       </header>
@@ -155,9 +158,9 @@ const OphthalmologyDepartment = () => {
               <h3>Dr. Rahul Sharma</h3>
               <p>Dr. Rahul Sharma is a board-certified ophthalmologist with over 15 years of experience. He specializes in cataract surgery and refractive surgeries.</p>
               <div className="book-appointment-box" style={bookAppointmentBoxStyle}>
-                <a href="bookapointment.html" className="book-appointment" style={bookAppointmentStyle}>
+              <Link to="/book-appointment" style={bookAppointmentStyle}>
                   Book Appointment
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -173,9 +176,9 @@ const OphthalmologyDepartment = () => {
               <h3>Dr. Sneha Patel</h3>
               <p>Dr. Sneha Patel is an ophthalmologist with expertise in pediatric ophthalmology and strabismus. She provides comprehensive eye care for children.</p>
               <div className="book-appointment-box" style={bookAppointmentBoxStyle}>
-                <a href="bookapointment.html" className="book-appointment" style={bookAppointmentStyle}>
+              <Link to="/book-appointment" style={bookAppointmentStyle}>
                   Book Appointment
-                </a>
+                </Link>
               </div>
             </div>
           </div>

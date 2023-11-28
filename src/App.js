@@ -41,6 +41,7 @@ import BookHealthCheckUp from './Service/BookHealthCheckUp';
 import BuyMedicine from './Service/BuyMedicine';
 import FindHospital from './Service/FindHospital';
 import AppointmentsList from './components/AppointmentsList';
+import ContactForm from './components/ContactForm';
 // import ConsultOnline from './Service/ConsultOnline'
 // import HomePage from './components/HomePage';
 // import Locom from './components/Locom';
@@ -79,6 +80,7 @@ function App() {
               <Route path="/view_health
               -record" element={<ENTDepartment/>}></Route>
               <Route path="/appointments" element={<AppointmentsList/>}></Route>
+              <Route path="/plan-your-trip" element={<ContactForm/>}></Route>
             </Routes>
           {/* </switch>       */}
       </BrowserRouter>

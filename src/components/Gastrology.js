@@ -1,6 +1,7 @@
 import React from 'react';
 import preview from '../images/apollo-removebg-preview.png'
 import Header from './Header';
+import {Link} from 'react-router-dom';
 const GastroenterologyDepartment = () => {
   const bodyStyle = {
     fontFamily: 'Arial, sans-serif',
@@ -36,6 +37,14 @@ const GastroenterologyDepartment = () => {
     justifyContent: 'center',
     marginBottom: '40px',
     textDecoration: 'solid',
+  };
+  const bookAppointmentStyle = {
+    marginTop: '10px',
+    backgroundColor: 'blue',
+    color: 'white',
+    padding: '8px 12px',
+    borderRadius: '5px',
+    textDecoration: 'none',
   };
 
   const doctorInfoStyle = {
@@ -106,7 +115,7 @@ const GastroenterologyDepartment = () => {
       <Header/>
       <header style={headerStyle}>
         <div className="logo" style={logoStyle}>
-          <a href="Home-Page.html">
+        <Link to="/">
             <img
               className="ml-2 mt-2"
               height="65px"
@@ -115,7 +124,7 @@ const GastroenterologyDepartment = () => {
               alt="img not found"
               style={logoImgStyle}
             />
-          </a>
+          </Link>
         </div>
         <h1 style={h1Style}>Gastroenterology Department</h1>
       </header>
@@ -128,9 +137,9 @@ const GastroenterologyDepartment = () => {
               <p><strong>Dr. John Smith</strong></p>
               <p>Specialization: Gastroenterology</p>
               <p>Experience: 10+ years</p>
-              <a href="bookapointment.html" className="book-appointment-button" style={bookAppointmentButtonStyle}>
+              <Link to="/book-appointment" style={bookAppointmentStyle}>
                 Book Appointment
-              </a>
+              </Link>
             </div>
             <div className="doctor-image" style={doctorImageStyle}>
               <img
@@ -147,9 +156,9 @@ const GastroenterologyDepartment = () => {
               <p><strong>Dr. Adesh A Setty</strong></p>
               <p>Specialization: Gastroenterology</p>
               <p>Experience: 15+ years</p>
-              <a href="bookapointment.html" className="book-appointment-button" style={bookAppointmentButtonStyle}>
+              <Link to="/book-appointment" style={bookAppointmentStyle}>
                 Book Appointment
-              </a>
+              </Link>
             </div>
             <div className="doctor-image" style={doctorImageStyle}>
               <img

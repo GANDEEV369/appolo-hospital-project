@@ -3669,8 +3669,15 @@ import PsychiatryPage from "./Psychiatry";
 import DentistDepartment from "./Dentistry";
 import ENTDepartment from "./ENT";
 import AppointmentsList from "./AppointmentsList";
+import ContactForm from "./ContactForm";
+import FindHospital from "../Service/FindHospital";
 
 const specialtyRoutes = [
+  {
+    title: "Find Hospital",
+    link: "/find-hospital",
+    component: <FindHospital/>,
+  },
   {
     title: "Cardiology",
     link: "/cardiology",
@@ -3725,6 +3732,11 @@ const specialtyRoutes = [
     title: "View Appointments",
     link: "/appointments",
     component: <AppointmentsList />,
+  },
+  {
+    title: "Plan Your Trip",
+    link: "/plan-your-trip",
+    component: <ContactForm />,
   },
 ];
 
@@ -3825,10 +3837,26 @@ function Header() {
                 Centers of Excellence
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem href="#">Action</DropdownItem>
-                <DropdownItem href="#">Another action</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem href="#">Something else here</DropdownItem>
+              <Link to='/cardiology' className="pg_widget" id="COE_Cardiology">
+                <DropdownItem href="#">Cardiology</DropdownItem></Link>
+                <Link to='/gastrology' className="pg_widget" id="COE_Gastroenterology">
+                <DropdownItem href="#">Gastroenterology</DropdownItem></Link>
+                <Link to='/gynecology' className="pg_widget" id="COE_Gynecology">
+                <DropdownItem href="#">Gynecology</DropdownItem></Link>
+                <Link to='/dermatology' className="pg_widget" id="COE_Dermatology">
+                <DropdownItem href="#">Dermatology</DropdownItem></Link>
+                <Link to='/ophtamology' className="pg_widget" id="COE_Ophthalmology">
+                <DropdownItem href="#">Ophtamology</DropdownItem></Link>
+                <Link to='/pulmanology' className="pg_widget" id="COE_Pulmonology">
+                <DropdownItem href="#">Pulmonology</DropdownItem></Link>
+                <Link to='/plastic-surgery' className="pg_widget" id="COE_Plasticsurgery">
+                <DropdownItem href="#">Plastic Surgery</DropdownItem></Link>
+                <Link to='/psychiatry' className="pg_widget" id="COE_Psychiatry">
+                <DropdownItem href="#">Psychiatry</DropdownItem></Link>
+                <Link to='/dentistry' className="pg_widget" id="COE_Dentistry">
+                <DropdownItem href="#">Dentistry</DropdownItem></Link>
+                <Link to='/ENT' className="pg_widget" id="COE_ENT">
+                <DropdownItem href="#">ENT</DropdownItem></Link>
               </DropdownMenu>
             </Dropdown>
             <Dropdown
@@ -3840,10 +3868,11 @@ function Header() {
                 Health Information
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem href="#">Action</DropdownItem>
-                <DropdownItem href="#">Another action</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem href="#">Something else here</DropdownItem>
+                <DropdownItem href="#">Diseases and Condition</DropdownItem>
+                <DropdownItem href="#">Tests and Procedures</DropdownItem>
+                <DropdownItem href="#">Medical Glosarry Decoded</DropdownItem>
+                <DropdownItem href="#">Understanding Investigation</DropdownItem>
+                
               </DropdownMenu>
             </Dropdown>
             <Dropdown
@@ -3855,10 +3884,13 @@ function Header() {
                 International Patient
               </DropdownToggle>
               <DropdownMenu>
-                <DropdownItem href="#">Action</DropdownItem>
-                <DropdownItem href="#">Another action</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem href="#">Something else here</DropdownItem>
+                <Link to='/plan-your-trip'>
+                <DropdownItem href="#">Plan Your Trip</DropdownItem>
+                </Link>
+                <DropdownItem href="#">Online Consultation</DropdownItem>
+                <DropdownItem href="#">Visa</DropdownItem>
+                <DropdownItem href="#">Apollo Insurance</DropdownItem>
+                
               </DropdownMenu>
             </Dropdown>
             <Dropdown
@@ -3871,11 +3903,21 @@ function Header() {
               </DropdownToggle>
               <DropdownMenu>
                 <DropdownItem href="https://www.youtube.com/results?search_query=apollohospitals+react+project+">
-                  Action
+                  Apollo
                 </DropdownItem>
-                <DropdownItem href="#">Another action</DropdownItem>
-                <DropdownItem divider />
-                <DropdownItem href="#">Something else here</DropdownItem>
+                <Link to="/find-hospital">
+                <DropdownItem href="#">Hyderabad</DropdownItem></Link>
+                <Link to="/find-hospital">
+                <DropdownItem href="#">Bangalore</DropdownItem></Link>
+                <Link to="/find-hospital">
+                <DropdownItem href="#">Delhi</DropdownItem></Link>
+                <Link to="/find-hospital">
+                <DropdownItem href="#">Chennai</DropdownItem></Link>
+                <Link to="/find-hospital">
+                <DropdownItem href="#">Mumbai</DropdownItem></Link>
+                <Link to="/find-hospital">
+                <DropdownItem href="#">Kolkata</DropdownItem></Link>
+                
               </DropdownMenu>
             </Dropdown>
             {isAdmin && (

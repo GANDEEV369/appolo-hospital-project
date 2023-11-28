@@ -6,6 +6,7 @@ import d2 from './images/d2.png'
 import d3 from './images/d3.png'
 import d4 from './images/d4.png'
 import Header from './Header';
+import {Link} from 'react-router-dom';
 const DermatologyDepartment = () => {
   const bodyStyle = {
     fontFamily: 'Arial, sans-serif',
@@ -103,7 +104,7 @@ const DermatologyDepartment = () => {
       <Header/>
       <header style={headerStyle}>
         <div className="logo" style={logoStyle}>
-          <a href="Home-Page.html">
+        <Link to="/">
             <img
               className="ml-2 mt-2"
               height="65px"
@@ -112,7 +113,7 @@ const DermatologyDepartment = () => {
               alt="img not found"
               style={logoImgStyle}
             />
-          </a>
+          </Link>
         </div>
         <h1 style={h1Style}>Dermatology Department</h1>
       </header>
@@ -154,9 +155,9 @@ const DermatologyDepartment = () => {
               <h3>Dr Aishwarya Malladi</h3>
               <p>Dr Aishwarya Malladi is a board-certified dermatologist with over 10 years of experience. She specializes in skin cancer detection and treatment.</p>
               <div className="book-appointment-box" style={bookAppointmentBoxStyle}>
-                <a href="bookapointment.html" className="book-appointment" style={bookAppointmentStyle}>
+              <Link to="/book-appointment" style={bookAppointmentStyle}>
                   Book Appointment
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -190,9 +191,9 @@ const DermatologyDepartment = () => {
               <h3>Dr Amulya Ramamurthy</h3>
               <p>Dr Amulya Ramamurthy is a dermatologist specialized in pediatric dermatology. She has extensive experience in diagnosing and treating skin conditions in children.</p>
               <div className="book-appointment-box" style={bookAppointmentBoxStyle}>
-                <a href="bookapointment.html" className="book-appointment" style={bookAppointmentStyle}>
+              <Link to="/book-appointment" style={bookAppointmentStyle}>
                   Book Appointment
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -208,9 +209,9 @@ const DermatologyDepartment = () => {
               <h3>Dr Anju Mangla</h3>
               <p>Dr Anju Mangla is a dermatologist with expertise in dermatologic surgery. She performs procedures such as mole removal, skin biopsies, and Mohs surgery.</p>
               <div className="book-appointment-box" style={bookAppointmentBoxStyle}>
-                <a href="bookapointment.html" className="book-appointment" style={bookAppointmentStyle}>
+              <Link to="/book-appointment" style={bookAppointmentStyle}>
                   Book Appointment
-                </a>
+                </Link>
               </div>
             </div>
           </div>
