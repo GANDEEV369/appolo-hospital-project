@@ -51,6 +51,7 @@ app.get('/', (req, res) => {
 app.use('/fetch', require('./ComponentsApollo/fetch'));
 app.use('/fetchdoctor', require('./ComponentsApollo/fetchdoctor'));
 app.use('/fetchappointments',require('./ComponentsApollo/fetchappointments'));
+app.use('/deleteappointment',require('./ComponentsApollo/deleteappointment'));
 app.use('/register', require('./ComponentsApollo/register'));
 app.use('/bookappointment', require('./ComponentsApollo/bookappointment'));
 app.use('/bookhealthcheckup', require('./ComponentsApollo/bookhealthcheckup'));

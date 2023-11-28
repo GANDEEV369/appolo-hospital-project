@@ -176,9 +176,74 @@
 // });
 
 // module.exports = register;
+// let mongodb = require("mongodb");
+// let talentsprint = mongodb.MongoClient;
+// let express = require("express");
+// let register = express.Router();
+
+// register.post("/", (req, res) => {
+//   talentsprint.connect("mongodb://localhost:27017/ApolloDB", (err, db) => {
+//     if (err) {
+//       res.status(500).send({ message: "Database connection error" });
+//       return;
+//     }
+
+//     const username = req.body.username;
+//     const email = req.body.email; // changed from 'mail' to 'email'
+//     const password = req.body.password;
+//     const confirmpassword = req.body.confirmpassword;
+
+//     // Add frontend validation checks
+//     if (password !== confirmpassword) {
+//       res.status(400).send({ message: "Passwords do not match" });
+//       db.close();
+//       return;
+//     }
+
+//     // Check if the username or email already exist in the database
+//     db.collection("ApolloUser").findOne(
+//       { $or: [{ "username": username }, { "email": email }] }, // changed from 'mail' to 'email'
+//       (err, user) => {
+//         if (err) {
+//           res.status(500).send({ message: "Database error" });
+//           db.close();
+//           return;
+//         }
+
+//         if (user) {
+//           res.status(400).send({ message: "Username or email already exists" });
+//           db.close();
+//           return;
+//         }
+
+//         // If all checks pass, insert the new user
+//         db.collection("ApolloUser").insertOne(
+//           {
+//             "username": username,
+//             "name": req.body.name,
+//             "email": email, // changed from 'mail' to 'email'
+//             "password": password,
+//             "confirmpassword": confirmpassword,
+//           },
+//           (err, result) => {
+//             if (err) {
+//               res.status(500).send({ message: "Database error" });
+//             } else {
+//               res.status(200).send({ message: "Registration successful" });
+//             }
+//             db.close();
+//           }
+//         );
+//       }
+//     );
+//   });
+// });
+
+// module.exports = register;//actual main code with out bcrypt
 let mongodb = require("mongodb");
 let talentsprint = mongodb.MongoClient;
 let express = require("express");
+let bcrypt = require("bcrypt");
 let register = express.Router();
 
 register.post("/", (req, res) => {
@@ -189,20 +254,18 @@ register.post("/", (req, res) => {
     }
 
     const username = req.body.username;
-    const email = req.body.email; // changed from 'mail' to 'email'
+    const email = req.body.email;
     const password = req.body.password;
     const confirmpassword = req.body.confirmpassword;
 
-    // Add frontend validation checks
     if (password !== confirmpassword) {
       res.status(400).send({ message: "Passwords do not match" });
       db.close();
       return;
     }
 
-    // Check if the username or email already exist in the database
     db.collection("ApolloUser").findOne(
-      { $or: [{ "username": username }, { "email": email }] }, // changed from 'mail' to 'email'
+      { $or: [{ "username": username }, { "email": email }] },
       (err, user) => {
         if (err) {
           res.status(500).send({ message: "Database error" });
@@ -216,30 +279,38 @@ register.post("/", (req, res) => {
           return;
         }
 
-        // If all checks pass, insert the new user
-        db.collection("ApolloUser").insertOne(
-          {
-            "username": username,
-            "name": req.body.name,
-            "email": email, // changed from 'mail' to 'email'
-            "password": password,
-            "confirmpassword": confirmpassword,
-          },
-          (err, result) => {
-            if (err) {
-              res.status(500).send({ message: "Database error" });
-            } else {
-              res.status(200).send({ message: "Registration successful" });
-            }
+        // Hash the password before storing it
+        bcrypt.hash(password, 10, (err, hashedPassword) => {
+          if (err) {
+            res.status(500).send({ message: "Password hashing error" });
             db.close();
+            return;
           }
-        );
+
+          db.collection("ApolloUser").insertOne(
+            {
+              "username": username,
+              "name": req.body.name,
+              "email": email,
+              "password": hashedPassword, // Store the hashed password
+            },
+            (err, result) => {
+              if (err) {
+                res.status(500).send({ message: "Database error" });
+              } else {
+                res.status(200).send({ message: "Registration successful" });
+              }
+              db.close();
+            }
+          );
+        });
       }
     );
   });
 });
 
 module.exports = register;
+
 
 // const mongodb = require("mongodb");
 // const { MongoClient } = mongodb;
